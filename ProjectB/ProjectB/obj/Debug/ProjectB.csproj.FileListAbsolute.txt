@@ -1,0 +1,35 @@
+F:\6th Smester\Project\ProjectB\ProjectB\bin\Debug\ProjectB.exe.config
+F:\6th Smester\Project\ProjectB\ProjectB\bin\Debug\ProjectB.exe
+F:\6th Smester\Project\ProjectB\ProjectB\bin\Debug\ProjectB.pdb
+F:\6th Smester\Project\ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
+F:\6th Smester\Project\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.Cache
+F:\6th Smester\Project\ProjectB\ProjectB\obj\Debug\ProjectB.exe
+F:\6th Smester\Project\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
+F:\6th Smester\Project\ProjectB\ProjectB\obj\Debug\ProjectB.csprojResolveAssemblyReference.cache
+F:\6th Smester\Project\ProjectB\ProjectB\obj\Debug\ProjectB.ManageClo.resources
+F:\6th Smester\Project\ProjectB\ProjectB\obj\Debug\ProjectB.ManageStudent.resources
+F:\6th Smester\Project\ProjectB\ProjectB\obj\Debug\ProjectB.Home.resources
+I:\ProjectB\ProjectB\bin\Debug\ProjectB.exe.config
+I:\ProjectB\ProjectB\bin\Debug\ProjectB.exe
+I:\ProjectB\ProjectB\bin\Debug\ProjectB.pdb
+I:\ProjectB\ProjectB\obj\Debug\ProjectB.csprojResolveAssemblyReference.cache
+I:\ProjectB\ProjectB\obj\Debug\ProjectB.ManageClo.resources
+I:\ProjectB\ProjectB\obj\Debug\ProjectB.ManageStudent.resources
+I:\ProjectB\ProjectB\obj\Debug\ProjectB.Home.resources
+I:\ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
+I:\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.Cache
+I:\ProjectB\ProjectB\obj\Debug\ProjectB.exe
+I:\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
+I:\ProjectB\ProjectB\obj\Debug\ProjectB.ManageRubric.resources
+C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\bin\Debug\ProjectB.exe.config
+C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.exe
+C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
+C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\bin\Debug\ProjectB.exe
+C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\bin\Debug\ProjectB.pdb
+C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.csprojResolveAssemblyReference.cache
+C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.ManageClo.resources
+C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.ManageStudent.resources
+C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.Home.resources
+C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
+C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.ManageRubric.resources
+C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.Cache
