@@ -78,30 +78,27 @@
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(207, 192);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(155, 156);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(376, 22);
+            this.textBox1.Size = new System.Drawing.Size(283, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT_ONLY);
             // 
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(207, 222);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Location = new System.Drawing.Point(155, 180);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(376, 22);
+            this.textBox2.Size = new System.Drawing.Size(283, 20);
             this.textBox2.TabIndex = 1;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT1_ONLY);
             // 
             // textBox3
             // 
             this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Location = new System.Drawing.Point(207, 252);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Location = new System.Drawing.Point(155, 205);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(376, 22);
+            this.textBox3.Size = new System.Drawing.Size(283, 20);
             this.textBox3.TabIndex = 2;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NMBR_ONLY);
@@ -109,30 +106,27 @@
             // textBox4
             // 
             this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Location = new System.Drawing.Point(207, 282);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox4.Location = new System.Drawing.Point(155, 229);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(376, 22);
+            this.textBox4.Size = new System.Drawing.Size(283, 20);
             this.textBox4.TabIndex = 3;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox5
             // 
             this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox5.Location = new System.Drawing.Point(207, 312);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox5.Location = new System.Drawing.Point(155, 254);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(376, 22);
+            this.textBox5.Size = new System.Drawing.Size(283, 20);
             this.textBox5.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 192);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(24, 156);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "First Name";
             // 
@@ -140,10 +134,9 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 225);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(24, 183);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 17);
+            this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Last Name";
             // 
@@ -151,10 +144,9 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 257);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(24, 209);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
+            this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Contact";
             // 
@@ -162,10 +154,9 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 285);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(24, 232);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 17);
+            this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Email";
             // 
@@ -173,10 +164,9 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(32, 317);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(24, 258);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 17);
+            this.label5.Size = new System.Drawing.Size(103, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Registration Number";
             // 
@@ -184,20 +174,18 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 347);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(24, 282);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 17);
+            this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Status";
             // 
             // textBox6
             // 
             this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox6.Location = new System.Drawing.Point(207, 342);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox6.Location = new System.Drawing.Point(155, 278);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(376, 22);
+            this.textBox6.Size = new System.Drawing.Size(283, 20);
             this.textBox6.TabIndex = 11;
             this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NMBR1_ONLY);
             // 
@@ -205,10 +193,10 @@
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button1.Location = new System.Drawing.Point(634, 216);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(476, 176);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 34);
+            this.button1.Size = new System.Drawing.Size(90, 28);
             this.button1.TabIndex = 12;
             this.button1.Text = "Add To DB";
             this.button1.UseVisualStyleBackColor = false;
@@ -218,10 +206,10 @@
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button2.Location = new System.Drawing.Point(780, 216);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Location = new System.Drawing.Point(585, 176);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 34);
+            this.button2.Size = new System.Drawing.Size(91, 28);
             this.button2.TabIndex = 13;
             this.button2.Text = "Show  Data";
             this.button2.UseVisualStyleBackColor = false;
@@ -249,10 +237,9 @@
             this.Edit,
             this.Delete});
             this.dataGridView1.DataSource = this.studentBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 402);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 327);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(975, 265);
+            this.dataGridView1.Size = new System.Drawing.Size(731, 215);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -345,10 +332,9 @@
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button3.Location = new System.Drawing.Point(9, 45);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(6, 37);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 28);
+            this.button3.Size = new System.Drawing.Size(90, 23);
             this.button3.TabIndex = 15;
             this.button3.Text = "Back to Home";
             this.button3.UseVisualStyleBackColor = false;
@@ -358,10 +344,10 @@
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button4.Location = new System.Drawing.Point(634, 282);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Location = new System.Drawing.Point(476, 229);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 32);
+            this.button4.Size = new System.Drawing.Size(90, 26);
             this.button4.TabIndex = 16;
             this.button4.Text = "CLO\'S";
             this.button4.UseVisualStyleBackColor = false;
@@ -375,9 +361,11 @@
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button5.Location = new System.Drawing.Point(780, 282);
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Location = new System.Drawing.Point(585, 229);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(121, 32);
+            this.button5.Size = new System.Drawing.Size(91, 26);
             this.button5.TabIndex = 17;
             this.button5.Text = "Update";
             this.button5.UseVisualStyleBackColor = false;
@@ -386,10 +374,12 @@
             // textBox7
             // 
             this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox7.Location = new System.Drawing.Point(634, 158);
+            this.textBox7.Location = new System.Drawing.Point(476, 128);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(267, 22);
+            this.textBox7.Size = new System.Drawing.Size(201, 20);
             this.textBox7.TabIndex = 18;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -399,14 +389,15 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.81614F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.18385F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 153F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
             this.tableLayoutPanel1.Controls.Add(this.button3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label7, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 10);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(976, 119);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(732, 97);
             this.tableLayoutPanel1.TabIndex = 19;
             // 
             // label7
@@ -414,17 +405,18 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(193, 40);
+            this.label7.Location = new System.Drawing.Point(132, 33);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(574, 38);
+            this.label7.Size = new System.Drawing.Size(453, 30);
             this.label7.TabIndex = 16;
             this.label7.Text = "Manage Student(Add, Update And Delete)";
             // 
             // ManageStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 680);
+            this.ClientSize = new System.Drawing.Size(750, 552);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.button5);
@@ -444,7 +436,6 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManageStudent";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

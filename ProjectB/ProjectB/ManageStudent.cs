@@ -27,14 +27,14 @@ namespace ProjectB
                 //Builds connection with Database.
                 SqlConnection con = new SqlConnection("Data Source = AISHA; Initial Catalog = ProjectB; Integrated Security = True; MultipleActiveResultSets = True");
                 //Data insert query 
-                string query = "insert into Student(FirstName, LastName, Contact, Email, RegistrationNumber, Status) values('" + this.textBox1.Text + "','" + this.textBox2.Text + "','" + this.textBox3.Text + "','" + this.textBox4.Text + "','" + this.textBox5.Text + "','" + this.textBox6.Text + "'); ";
+                string query = "INSERT into Student(FirstName, LastName, Contact, Email, RegistrationNumber, Status) values('" + this.textBox1.Text + "','" + this.textBox2.Text + "','" + this.textBox3.Text + "','" + this.textBox4.Text + "','" + this.textBox5.Text + "','" + this.textBox6.Text + "'); ";
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader myreader;
                 try
                 {
                     con.Open();
                     myreader = cmd.ExecuteReader();
-                    MessageBox.Show("Saved");
+                    MessageBox.Show("Data is Saved");
                     //Clears textboxes after adding data.
                     textBox1.Text = "";
                     textBox2.Text = "";
@@ -146,9 +146,10 @@ namespace ProjectB
                 
             }
             //Data deletion.
-            if (MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (e.ColumnIndex == 8)
             {
-                if (e.ColumnIndex == 8)
+                if (MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    
                 {
                     this.dataGridView1.Rows.RemoveAt(e.RowIndex);
                     string query = "delete from Student where Id = @id1";
@@ -222,7 +223,7 @@ namespace ProjectB
             textBox5.Text = "";
             textBox6.Text = "";
             //shows updated data in datagridview.
-            using (SqlConnection sqlcon = new SqlConnection("Data Source = KHANS; Initial Catalog = ProjectB; Integrated Security = True; MultipleActiveResultSets = True"))
+            using (SqlConnection sqlcon = new SqlConnection("Data Source = AISHA; Initial Catalog = ProjectB; Integrated Security = True; MultipleActiveResultSets = True"))
             {
                 sqlcon.Open();
                 SqlDataAdapter sqlDA = new SqlDataAdapter("SELECT * FROM Student", sqlcon);
@@ -230,6 +231,11 @@ namespace ProjectB
                 sqlDA.Fill(d);
                 dataGridView1.DataSource = d;
             }
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

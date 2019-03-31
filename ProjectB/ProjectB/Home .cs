@@ -37,6 +37,20 @@ namespace ProjectB
             this.Hide();
             r.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ManageAssessment m = new ManageAssessment();
+            this.Hide();
+            m.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            RubricLevel r = new RubricLevel();
+            this.Hide();
+            r.Show();
+        }
     }
 }
 

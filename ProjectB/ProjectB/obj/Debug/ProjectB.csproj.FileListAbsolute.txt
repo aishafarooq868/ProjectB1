@@ -33,3 +33,17 @@ C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.Home.resou
 C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
 C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.ManageRubric.resources
 C:\Users\Engr\Desktop\New folder\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.Cache
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\bin\Debug\ProjectB.exe.config
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.exe
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\bin\Debug\ProjectB.exe
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\bin\Debug\ProjectB.pdb
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.csprojResolveAssemblyReference.cache
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageAssessment.resources
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageClo.resources
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageStudent.resources
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.Home.resources
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageRubric.resources
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.Cache
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.RubricLevel.resources

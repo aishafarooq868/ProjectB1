@@ -55,8 +55,8 @@ namespace ProjectB
                 //Establishes sql connection.
                 SqlConnection con = new SqlConnection("Data Source = AISHA; Initial Catalog = ProjectB; Integrated Security = True; MultipleActiveResultSets = True");
                 bool isExist = false;
-                string command = "SELECT Id FROM Rubric";
-                SqlCommand cmd1 = new SqlCommand(command, con);
+                string query1 = "SELECT Id FROM Rubric";
+                SqlCommand cmd1 = new SqlCommand(query1, con);
                 con.Open();
                 SqlDataReader reader = cmd1.ExecuteReader();
                 while(reader.Read())
@@ -70,7 +70,25 @@ namespace ProjectB
                     }
                 }
                 con.Close();
-                if(isExist == false)
+
+                bool isExist1 = false;
+                string query2 = "SELECT CloId, COUNT(CloId) FROM Rubric GROUP BY CloId HAVING COUNT(CloId) >= 4";
+                SqlCommand cmd2 = new SqlCommand(query2, con);
+                con.Open();
+                SqlDataReader reader1 = cmd2.ExecuteReader();
+                 while(reader1.Read())
+                {
+                    int id = Convert.ToInt32(comboBox1.Text);
+                    if(id == Convert.ToInt32(reader1[0]))
+                    {
+                        isExist1 = true;
+                        MessageBox.Show("More than 4 rubrics can't be added against 1 CLO.");
+                        break;
+                    }
+                }
+                con.Close();
+
+                if(isExist == false && isExist1 == false)
                 {
                     //Insert query
                     string query = "INSERT into Rubric(Id, Details, CloId) values('" + this.textBox1.Text + "','" + this.textBox2.Text + "','" + comboBox1.Text + "'); ";
@@ -91,7 +109,9 @@ namespace ProjectB
                         MessageBox.Show(ex.Message);
                     }
                 }
-                
+                textBox1.Text = "";
+                textBox2.Text = "";
+                comboBox1.SelectedItem = null;
                 
             }
             //Throws message for not providing details.
@@ -139,17 +159,23 @@ namespace ProjectB
                 if (MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     this.dataGridView1.Rows.RemoveAt(e.RowIndex);
-                    string query = "DELETE from Rubric WHERE Id = @id1";
+                    string query = "DELETE FROM RubricLevel WHERE RubricId = @id1";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.Add(new SqlParameter("@id1", id1));
                     cmd.ExecuteReader();
+                    
+                    this.dataGridView1.Rows.RemoveAt(e.RowIndex);
+                    string query1 = "DELETE from Rubric WHERE Id = @id1";
+                    SqlCommand cmd1 = new SqlCommand(query1, con);
+                    cmd1.Parameters.Add(new SqlParameter("@id1", id1));
+                    cmd1.ExecuteReader();
                     con.Close();
                 }
             }
             //Data updation
             if (e.ColumnIndex == 3)
             {
-                textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+                //textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
                 textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
                 comboBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
 
@@ -163,14 +189,14 @@ namespace ProjectB
             SqlConnection con = new SqlConnection("Data Source = AISHA; Initial Catalog = ProjectB; Integrated Security = True; MultipleActiveResultSets = True");
             con.Open();
             //Update query
-            string query = "UPDATE Rubric SET Id = '" + this.textBox1.Text + "', Details = '" + textBox2.Text + "', CloId = '" + comboBox1.Text + "' WHERE Id= '" + id + "'";
+            string query = "UPDATE Rubric SET /*Id = '" + this.textBox1.Text + "',*/ Details = '" + textBox2.Text + "', CloId = '" + comboBox1.Text + "' WHERE Id= '" + id + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Data is updated");
             //Data inputs are cleared after updation
             textBox1.Text = "";
             textBox2.Text = "";
-            comboBox1.Text = "";
+            comboBox1.SelectedItem = null;
             //Showing updated data in datagridview
             using (SqlConnection sqlcon = new SqlConnection("Data Source = AISHA; Initial Catalog = ProjectB; Integrated Security = True; MultipleActiveResultSets = True"))
             {
