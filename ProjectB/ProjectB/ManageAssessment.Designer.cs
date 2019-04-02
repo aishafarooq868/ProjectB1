@@ -51,6 +51,7 @@
             this.cmd_show = new System.Windows.Forms.Button();
             this.cmd_update = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet6)).BeginInit();
@@ -235,11 +236,22 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 12;
             // 
+            // btn_back
+            // 
+            this.btn_back.Location = new System.Drawing.Point(490, 80);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(75, 23);
+            this.btn_back.TabIndex = 13;
+            this.btn_back.Text = "Back";
+            this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
             // ManageAssessment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 358);
+            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cmd_update);
             this.Controls.Add(this.cmd_show);
@@ -286,5 +298,6 @@
         private System.Windows.Forms.Button cmd_show;
         private System.Windows.Forms.Button cmd_update;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_back;
     }
 }

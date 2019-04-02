@@ -194,5 +194,12 @@ namespace ProjectB
                 }
             }
         }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Home h = new Home();
+            this.Hide();
+            h.Show();
+        }
     }
 }

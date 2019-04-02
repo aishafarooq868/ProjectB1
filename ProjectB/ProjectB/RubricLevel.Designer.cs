@@ -49,6 +49,7 @@
             this.rubricLevelTableAdapter = new ProjectB.ProjectBDataSet7TableAdapters.RubricLevelTableAdapter();
             this.btn_update = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rubricLevelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet7)).BeginInit();
@@ -222,11 +223,22 @@
             this.textBox1.Size = new System.Drawing.Size(153, 20);
             this.textBox1.TabIndex = 10;
             // 
+            // btn_back
+            // 
+            this.btn_back.Location = new System.Drawing.Point(519, 71);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(80, 23);
+            this.btn_back.TabIndex = 11;
+            this.btn_back.Text = "Back";
+            this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
             // RubricLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 333);
+            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.dataGridView1);
@@ -271,5 +283,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_back;
     }
 }

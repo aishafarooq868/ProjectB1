@@ -64,17 +64,31 @@ namespace ProjectB
                 if (e.ColumnIndex == 5)
                 {
                     this.dataGridView1.Rows.RemoveAt(e.RowIndex);
-                    string query = "DELETE FROM Rubric WHERE CloId = @id1";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.Add(new SqlParameter("@id1", id1));
-                    cmd.ExecuteReader();
+                string query = "DELETE FROM dbo.[RubricLevel] and dbo.[AssessmentComponent] WHERE RubricId = @id1";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.Add(new SqlParameter("@id1", id1));
+                cmd.ExecuteReader();
+                con.Close();
+
+                //con.Open();
+                //string query3 = "DELETE FROM AssessmentComponent WHERE RubricId = @id1";
+                //SqlCommand cmd3 = new SqlCommand(query3, con);
+                //cmd3.Parameters.Add(new SqlParameter("@id1", id1));
+                //cmd3.ExecuteReader();
+                //con.Close();
+
+                con.Open();
+                string query1 = "DELETE FROM Rubric WHERE CloId = @id1";
+                    SqlCommand cmd1 = new SqlCommand(query1, con);
+                    cmd1.Parameters.Add(new SqlParameter("@id1", id1));
+                    cmd1.ExecuteReader();
                     con.Close();
 
                     con.Open();
-                    string query1 = "DELETE FROM Clo WHERE Id = @id1";
-                    SqlCommand command = new SqlCommand(query1, con);
-                    command.Parameters.Add(new SqlParameter("@id1", id1));
-                    command.ExecuteReader();
+                    string query2 = "DELETE FROM Clo WHERE Id = @id1";
+                    SqlCommand cmd2 = new SqlCommand(query2, con);
+                    cmd2.Parameters.Add(new SqlParameter("@id1", id1));
+                    cmd2.ExecuteReader();
                     con.Close();
 
                 }

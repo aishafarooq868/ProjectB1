@@ -47,3 +47,6 @@ C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.
 C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageRubric.resources
 C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.Cache
 C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.RubricLevel.resources
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageAssessmentComponent.resources
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\bin\Debug\itextsharp.dll
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.Report.resources

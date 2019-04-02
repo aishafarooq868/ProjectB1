@@ -137,10 +137,18 @@ namespace ProjectB
 
                 {
                     this.dataGridView1.Rows.RemoveAt(e.RowIndex);
-                    string query = "DELETE FROM Assessment WHERE Id = @id1";
+                    con.Open();
+                    string query = "DELETE FROM AssessmentComponent WHERE AssessmentId = @id1";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.Add(new SqlParameter("@id1", id1));
                     cmd.ExecuteReader();
+                    con.Close();
+
+                    con.Open();
+                    string query1 = "DELETE FROM Assessment WHERE Id = @id1";
+                    SqlCommand cmd1 = new SqlCommand(query1, con);
+                    cmd1.Parameters.Add(new SqlParameter("@id1", id1));
+                    cmd1.ExecuteReader();
                     con.Close();
                 }
             }
@@ -190,6 +198,13 @@ namespace ProjectB
                 sqlDA.Fill(d);
                 dataGridView1.DataSource = d;
             }
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Home h = new Home();
+            this.Hide();
+            h.Show();
         }
     }
 }

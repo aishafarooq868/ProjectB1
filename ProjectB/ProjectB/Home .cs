@@ -51,6 +51,21 @@ namespace ProjectB
             this.Hide();
             r.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ManageAssessmentComponent a = new ManageAssessmentComponent();
+            this.Hide();
+            a.Show();
+            
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Report r = new Report();
+            this.Hide();
+            r.Show();
+        }
     }
 }
 

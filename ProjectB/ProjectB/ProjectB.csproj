@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>F:\6th Smester\DBMS\Lab Project\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="iTextSharp\text\Color.cs" />
+    <Compile Include="ManageAssessmentComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageAssessmentComponent.Designer.cs">
+      <DependentUpon>ManageAssessmentComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageAssessment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +121,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjectBDataSet7.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProjectBDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectBDataSet8.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ManageRubric.cs">
       <SubType>Form</SubType>
@@ -118,12 +133,21 @@
     <Compile Include="ManageRubric.Designer.cs">
       <DependentUpon>ManageRubric.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="RubricLevel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RubricLevel.Designer.cs">
       <DependentUpon>RubricLevel.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ManageAssessmentComponent.resx">
+      <DependentUpon>ManageAssessmentComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageAssessment.resx">
       <DependentUpon>ManageAssessment.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +171,9 @@
     </Compile>
     <EmbeddedResource Include="ManageRubric.resx">
       <DependentUpon>ManageRubric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RubricLevel.resx">
       <DependentUpon>RubricLevel.cs</DependentUpon>
@@ -238,6 +265,17 @@
     </None>
     <None Include="ProjectBDataSet7.xss">
       <DependentUpon>ProjectBDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet8.xsc">
+      <DependentUpon>ProjectBDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectBDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectBDataSet8.xss">
+      <DependentUpon>ProjectBDataSet8.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
