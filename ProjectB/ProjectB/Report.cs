@@ -50,10 +50,10 @@ namespace ProjectB
         }
         public void exportgridtopdf(DataGridView d, string filename)
         {
-            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_BOLD, BaseFont.CP1250, BaseFont.EMBEDDED);
             PdfPTable pdftable1 = new PdfPTable(d.Columns.Count);
 
-            pdftable1.DefaultCell.Padding = 3;
+            pdftable1.DefaultCell.Padding = 2;
             pdftable1.WidthPercentage = 100;
             pdftable1.HorizontalAlignment = Element.ALIGN_LEFT;
             pdftable1.DefaultCell.BorderWidth = 1;

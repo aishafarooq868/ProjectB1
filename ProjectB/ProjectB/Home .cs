@@ -66,6 +66,13 @@ namespace ProjectB
             this.Hide();
             r.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ManageStudentResult m = new ManageStudentResult();
+            this.Hide();
+            m.Show();
+        }
     }
 }
 
