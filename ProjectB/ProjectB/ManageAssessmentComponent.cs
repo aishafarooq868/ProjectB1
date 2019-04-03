@@ -63,45 +63,72 @@ namespace ProjectB
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            string query = "INSERT into AssessmentComponent (Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId) values('"+txt_name.Text+"', '"+cbx_rubricId.Text+"', '"+txt_totalmarks.Text+"', '"+dtp_created.Value+"', '"+dtp_updated.Value+"', '"+cbx_assessmentId.Text+"')";
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataReader reader;
-            try
+            bool isExist1 = false;
+            string query2 = "SELECT AssessmentId, COUNT(AssessmentId) FROM AssessmentComponent GROUP BY AssessmentId HAVING COUNT(AssessmentId) >= 3";
+            SqlCommand cmd2 = new SqlCommand(query2, con);
+            con.Open();
+            SqlDataReader reader1 = cmd2.ExecuteReader();
+            while (reader1.Read())
             {
-                con.Open();
-                reader = cmd.ExecuteReader();
-                MessageBox.Show("Data is Saved");
+                int id = Convert.ToInt32(cbx_assessmentId.Text);
+                if (id == Convert.ToInt32(reader1[0]))
+                {
+                    isExist1 = true;
+                    MessageBox.Show("More than 3 Components can't be added against 1 Assessment.");
+                    break;
+                }
+            }
+            con.Close();
+            if(txt_name.Text != "" && txt_totalmarks.Text != "" && cbx_assessmentId.Text != "" && cbx_rubricId.Text != "")
+            {
+                if(isExist1 == false)
+                {
+                    string query = "INSERT into AssessmentComponent (Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId) values('" + txt_name.Text + "', '" + cbx_rubricId.Text + "', '" + txt_totalmarks.Text + "', '" + dtp_created.Value + "', '" + dtp_updated.Value + "', '" + cbx_assessmentId.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlDataReader reader;
+                    try
+                    {
+                        con.Open();
+                        reader = cmd.ExecuteReader();
+                        MessageBox.Show("Data is Saved");
 
-                //Clears textboxes after adding data.
-                txt_name.Text = "";
-                cbx_rubricId.SelectedItem = null;
-                txt_totalmarks.Text = "";
-                cbx_assessmentId.SelectedItem = null;
-                dtp_created.Value = DateTimePicker.MinimumDateTime;
-                dtp_updated.Value = DateTimePicker.MinimumDateTime;
-                con.Close();
-                string query1 = "SELECT * FROM AssessmentComponent";
-                SqlCommand cmd1 = new SqlCommand(query1, con);
-                try
-                {
-                    SqlDataAdapter da = new SqlDataAdapter();
-                    da.SelectCommand = cmd1;
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    BindingSource source = new BindingSource();
-                    source.DataSource = dt;
-                    dataGridView1.DataSource = source;
+                        //Clears textboxes after adding data.
+                        txt_name.Text = "";
+                        cbx_rubricId.SelectedItem = null;
+                        txt_totalmarks.Text = "";
+                        cbx_assessmentId.SelectedItem = null;
+                        dtp_created.Value = DateTimePicker.MinimumDateTime;
+                        dtp_updated.Value = DateTimePicker.MinimumDateTime;
+                        con.Close();
+                        string query1 = "SELECT * FROM AssessmentComponent";
+                        SqlCommand cmd1 = new SqlCommand(query1, con);
+                        try
+                        {
+                            SqlDataAdapter da = new SqlDataAdapter();
+                            da.SelectCommand = cmd1;
+                            DataTable dt = new DataTable();
+                            da.Fill(dt);
+                            BindingSource source = new BindingSource();
+                            source.DataSource = dt;
+                            dataGridView1.DataSource = source;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        //con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                //con.Close();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please! provide details.");
             }
+
 
         }
 
@@ -181,6 +208,13 @@ namespace ProjectB
 
                 {
                     this.dataGridView1.Rows.RemoveAt(e.RowIndex);
+                    string query1 = "DELETE FROM StudentResult WHERE AssessmentComponentId = @id1";
+                    SqlCommand cmd1 = new SqlCommand(query1, con);
+                    cmd1.Parameters.Add(new SqlParameter("@id1", id1));
+                    cmd1.ExecuteReader();
+                    con.Close();
+
+                    con.Open();
                     string query = "DELETE FROM AssessmentComponent WHERE Id = @id1";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.Add(new SqlParameter("@id1", id1));
