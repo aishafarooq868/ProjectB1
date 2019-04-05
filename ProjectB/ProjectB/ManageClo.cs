@@ -58,49 +58,153 @@ namespace ProjectB
             //Establishes sql connection
             SqlConnection con = new SqlConnection("Data Source = AISHA; Initial Catalog = ProjectB; Integrated Security = True; MultipleActiveResultSets = True");
             con.Open();
-            int id1 = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-            //if(MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                //Data deletion.
-                if (e.ColumnIndex == 5)
-                {
-                    this.dataGridView1.Rows.RemoveAt(e.RowIndex);
-                string query = "DELETE FROM dbo.[RubricLevel] and dbo.[AssessmentComponent] WHERE RubricId = @id1";
-                SqlCommand cmd = new SqlCommand(query, con);
+            //int id1 = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            ////if(MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //    //Data deletion.
+            //    if (e.ColumnIndex == 5)
+            //    {
+            //        this.dataGridView1.Rows.RemoveAt(e.RowIndex);
+            //    string query = "DELETE FROM dbo.[RubricLevel] and dbo.[AssessmentComponent] WHERE RubricId = @id1";
+            //    SqlCommand cmd = new SqlCommand(query, con);
+            //    cmd.Parameters.Add(new SqlParameter("@id1", id1));
+            //    cmd.ExecuteReader();
+            //    con.Close();
+
+            //    //con.Open();
+            //    //string query3 = "DELETE FROM AssessmentComponent WHERE RubricId = @id1";
+            //    //SqlCommand cmd3 = new SqlCommand(query3, con);
+            //    //cmd3.Parameters.Add(new SqlParameter("@id1", id1));
+            //    //cmd3.ExecuteReader();
+            //    //con.Close();
+
+            //    con.Open();
+            //    string query1 = "DELETE FROM Rubric WHERE CloId = @id1";
+            //        SqlCommand cmd1 = new SqlCommand(query1, con);
+            //        cmd1.Parameters.Add(new SqlParameter("@id1", id1));
+            //        cmd1.ExecuteReader();
+            //        con.Close();
+
+            //        con.Open();
+            //        string query2 = "DELETE FROM Clo WHERE Id = @id1";
+            //        SqlCommand cmd2 = new SqlCommand(query2, con);
+            //        cmd2.Parameters.Add(new SqlParameter("@id1", id1));
+            //        cmd2.ExecuteReader();
+            //        con.Close();
+
+            //    }
+
+            if (e.ColumnIndex == 5)
+            {
+                int id1 = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+
+                int[] rubric_array = new int[5];
+                int[] assessment_array = new int[50];
+                int[] rubriclvl_array = new int[5];
+
+                int i = 0;
+
+                string qeury = "Select Id from Rubric where CloId = @id1";
+                SqlCommand cmd = new SqlCommand(qeury, con);
                 cmd.Parameters.Add(new SqlParameter("@id1", id1));
-                cmd.ExecuteReader();
-                con.Close();
+                cmd.Parameters.Add(new SqlParameter("0", 1));
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    rubric_array[i] = Convert.ToInt32(reader[0]);
+                    i++;
 
-                //con.Open();
-                //string query3 = "DELETE FROM AssessmentComponent WHERE RubricId = @id1";
-                //SqlCommand cmd3 = new SqlCommand(query3, con);
-                //cmd3.Parameters.Add(new SqlParameter("@id1", id1));
-                //cmd3.ExecuteReader();
-                //con.Close();
 
-                con.Open();
-                string query1 = "DELETE FROM Rubric WHERE CloId = @id1";
-                    SqlCommand cmd1 = new SqlCommand(query1, con);
-                    cmd1.Parameters.Add(new SqlParameter("@id1", id1));
-                    cmd1.ExecuteReader();
-                    con.Close();
 
-                    con.Open();
-                    string query2 = "DELETE FROM Clo WHERE Id = @id1";
-                    SqlCommand cmd2 = new SqlCommand(query2, con);
-                    cmd2.Parameters.Add(new SqlParameter("@id1", id1));
-                    cmd2.ExecuteReader();
-                    con.Close();
 
                 }
-            
-            //if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index)
-            
-            //Data editing
-            if(e.ColumnIndex == 4)
-            {
-                textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
-                textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
-                
+                reader.Close();
+                foreach (int rubric in rubric_array)
+                {
+                    string qeury1 = "Select Id from RubricLevel where RubricId = '" + rubric + "'";
+                    SqlCommand cmd1 = new SqlCommand(qeury, con);
+                    cmd1.Parameters.Add(new SqlParameter("0", 1));
+                    //cmd1.Parameters.Add(new SqlParameter("0", 1));
+                    SqlDataReader reader1 = cmd.ExecuteReader();
+                    while (reader1.Read())
+                    {
+                        rubriclvl_array[i] = Convert.ToInt32(reader1[0]);
+                        i++;
+
+
+
+
+                    }
+                    reader1.Close();
+                    foreach (int lvl in rubriclvl_array)
+                    {
+                        string qeury2 = "Delete from StudentResult where RubricMeasurementId = '" + lvl + "'";
+                        SqlCommand cmd2 = new SqlCommand(qeury2, con);
+                        cmd2.ExecuteNonQuery();
+
+                        string qeury3 = "Delete from RubricLevel where Id = '" + lvl + "'";
+                        SqlCommand cmd3 = new SqlCommand(qeury3, con);
+                        cmd2.ExecuteNonQuery();
+
+
+
+
+                    }
+
+
+                }
+                foreach (int rubric in rubric_array)
+                {
+                    string qeury1 = "Select Id from AssessmentComponent where RubricId = '" + rubric + "'";
+                    SqlCommand cmd1 = new SqlCommand(qeury, con);
+                    cmd1.Parameters.Add(new SqlParameter("0", 1));
+                    //cmd1.Parameters.Add(new SqlParameter("0", 1));
+                    SqlDataReader reader1 = cmd.ExecuteReader();
+                    while (reader1.Read())
+                    {
+                        assessment_array[i] = Convert.ToInt32(reader1[0]);
+                        i++;
+
+
+
+
+                    }
+                    reader1.Close();
+                    foreach (int assessmentlvl in assessment_array)
+                    {
+                        string qeury2 = "Delete from StudentResult where AssessmentComponentId = '" + assessmentlvl + "'";
+                        SqlCommand cmd2 = new SqlCommand(qeury2, con);
+                        cmd2.ExecuteNonQuery();
+
+                        string qeury3 = "Delete from RubricLevel where Id = '" + assessmentlvl + "'";
+                        SqlCommand cmd3 = new SqlCommand(qeury3, con);
+                        cmd2.ExecuteNonQuery();
+
+
+
+
+                    }
+                    string qeury4 = "Delete from Rubric where CloId = @id";
+                    SqlCommand cmd4 = new SqlCommand(qeury4, con);
+                    cmd4.ExecuteNonQuery();
+
+
+                    string qeury5 = "Delete from Clo where Id = @id";
+                    SqlCommand cmd5 = new SqlCommand(qeury5, con);
+                    cmd5.ExecuteNonQuery();
+
+
+
+
+
+                }
+
+                ////Data editing
+                if (e.ColumnIndex == 4)
+                {
+                    textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+                    textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+
+                }
             }
         }
         //This is click of button 1 for inserting data of clo in database.

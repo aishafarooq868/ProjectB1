@@ -138,7 +138,7 @@ namespace ProjectB
                 {
                     this.dataGridView1.Rows.RemoveAt(e.RowIndex);
                     con.Open();
-                    string query = "DELETE FROM AssessmentComponent WHERE AssessmentId = @id1";
+                    /*string query = "DELETE FROM AssessmentComponent WHERE AssessmentId = @id1";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.Add(new SqlParameter("@id1", id1));
                     cmd.ExecuteReader();
@@ -149,7 +149,41 @@ namespace ProjectB
                     SqlCommand cmd1 = new SqlCommand(query1, con);
                     cmd1.Parameters.Add(new SqlParameter("@id1", id1));
                     cmd1.ExecuteReader();
-                    con.Close();
+                    con.Close();*/
+                    int[] array = new int[50];
+                    int i = 0;
+                    string query1 = "Select Id from AssessmentComponent WHERE AssessmentId = @id1";
+                    SqlCommand cmd1 = new SqlCommand(query1, con);
+                    cmd1.Parameters.Add(new SqlParameter("0", 1));
+                    SqlDataReader reader = cmd1.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        array[i]= Convert.ToInt32(reader[0]);
+                        i++;
+
+
+
+                    }
+
+                    foreach(int id in array)
+                    {
+                        string query2 = "Delete  from StudentResult WHERE AssessmentComponentId = '" + id + "'";
+                        SqlCommand cmd2 = new SqlCommand(query2, con);
+                        cmd2.ExecuteNonQuery();
+
+
+                        string query3 = "Delete  from AssessmentComponent WHERE Id = '" + id + "'";
+                        SqlCommand cmd3 = new SqlCommand(query3, con);
+                        cmd3.ExecuteNonQuery();
+
+
+                    }
+
+                    string query4 = "Delete  from Assessment WHERE Id = @id1";
+                    SqlCommand cmd4 = new SqlCommand(query4, con);
+                    cmd4.ExecuteNonQuery();
+
+
                 }
             }
         }

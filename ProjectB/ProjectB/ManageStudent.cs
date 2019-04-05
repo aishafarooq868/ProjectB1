@@ -18,16 +18,37 @@ namespace ProjectB
         {
             InitializeComponent();
         }
+        SqlConnection con = new SqlConnection("Data Source = AISHA; Initial Catalog = ProjectB; Integrated Security = True; MultipleActiveResultSets = True");
         //This the click of button 1 where data is inserted into the database.
+        int asn(string t)
+        {
+            if(t == "Active")
+            {
+                return 5;
+            }
+            return 6;
+        }
+        int statusId;
+        void ass()
+        {
+            if (comboBox1.Text == "Active")
+            {
+                statusId = 5;
+            }
+            else
+            {
+                statusId = 6;
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             //This if sets allowable and non allowable inputs.
-            if(textBox1.Text != "" &&  textBox4.Text != "" && textBox5.Text != "" && textBox6.Text != "")
+            if(textBox1.Text != "" &&  textBox4.Text != "" && textBox5.Text != "" && comboBox1.Text != "")
             {
                 //Builds connection with Database.
                 SqlConnection con = new SqlConnection("Data Source = AISHA; Initial Catalog = ProjectB; Integrated Security = True; MultipleActiveResultSets = True");
                 //Data insert query 
-                string query = "INSERT into Student(FirstName, LastName, Contact, Email, RegistrationNumber, Status) values('" + this.textBox1.Text + "','" + this.textBox2.Text + "','" + this.textBox3.Text + "','" + this.textBox4.Text + "','" + this.textBox5.Text + "','" + this.textBox6.Text + "'); ";
+                string query = "INSERT into Student(FirstName, LastName, Contact, Email, RegistrationNumber, Status) values('" + this.textBox1.Text + "','" + this.textBox2.Text + "','" + this.textBox3.Text + "','" + this.textBox4.Text + "','" + this.textBox5.Text + "','" + asn(this.comboBox1.Text) + "'); ";
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader myreader;
                 try
@@ -41,7 +62,7 @@ namespace ProjectB
                     textBox3.Text = "";
                     textBox4.Text = "";
                     textBox5.Text = "";
-                    textBox6.Text = "";
+                    comboBox1.Text = "";
                     while (myreader.Read())
                     {
 
@@ -63,7 +84,7 @@ namespace ProjectB
         private void button2_Click(object sender, EventArgs e)
         {
             //Cretes database connection.
-            SqlConnection con = new SqlConnection("Data Source = AISHA; Initial Catalog = ProjectB; Integrated Security = True; MultipleActiveResultSets = True");
+            
             //Query for selecting data to be shown in the grid.
             string query = "SELECT * FROM Student";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -142,7 +163,7 @@ namespace ProjectB
                 textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
                 textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
                 textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[5].FormattedValue.ToString();
-                textBox6.Text = dataGridView1.Rows[e.RowIndex].Cells[6].FormattedValue.ToString();
+                comboBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[6].FormattedValue.ToString();
                 
             }
             //Data deletion.
@@ -151,11 +172,24 @@ namespace ProjectB
                 if (MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     
                 {
-                    this.dataGridView1.Rows.RemoveAt(e.RowIndex);
+                    //this.dataGridView1.Rows.RemoveAt(e.RowIndex);
+
+                    string query1 = "delete from StudentAttendance where StudentId = @id1";
+                    SqlCommand cmd1 = new SqlCommand(query1, con);
+                    cmd1.Parameters.Add(new SqlParameter("@id1", id1));
+                    cmd1.ExecuteReader();
+
+                    string query2 = "delete from StudentResult where StudentId = @id1";
+                    SqlCommand cmd2 = new SqlCommand(query2, con);
+                    cmd2.Parameters.Add(new SqlParameter("@id1", id1));
+                    cmd2.ExecuteReader();
+
                     string query = "delete from Student where Id = @id1";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.Add(new SqlParameter("@id1", id1));
                     cmd.ExecuteReader();
+
+                    this.dataGridView1.Rows.RemoveAt(e.RowIndex);
                     con.Close();
                 }
             }
@@ -211,7 +245,7 @@ namespace ProjectB
             SqlConnection con = new SqlConnection("Data Source = AISHA; Initial Catalog = ProjectB; Integrated Security = True; MultipleActiveResultSets = True");
             con.Open();
             //Update query
-            string query = "UPDATE Student Set FirstName = '" + this.textBox1.Text + "', LastName = '"+this.textBox2.Text+"', Contact = '"+this.textBox3.Text+"', Email = '"+this.textBox4.Text+"', RegistrationNumber = '"+this.textBox5.Text+"', Status = '"+this.textBox6.Text+"' WHERE Id= '"+id+"'";
+            string query = "UPDATE Student Set FirstName = '" + this.textBox1.Text + "', LastName = '"+this.textBox2.Text+"', Contact = '"+this.textBox3.Text+"', Email = '"+this.textBox4.Text+"', RegistrationNumber = '"+this.textBox5.Text+"', Status = '"+this.comboBox1.Text+"' WHERE Id= '"+id+"'";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Data is updated");
@@ -221,7 +255,7 @@ namespace ProjectB
             textBox3.Text = "";
             textBox4.Text = "";
             textBox5.Text = "";
-            textBox6.Text = "";
+            comboBox1.Text = "";
             //shows updated data in datagridview.
             using (SqlConnection sqlcon = new SqlConnection("Data Source = AISHA; Initial Catalog = ProjectB; Integrated Security = True; MultipleActiveResultSets = True"))
             {
@@ -238,5 +272,35 @@ namespace ProjectB
         {
 
         }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+            
+            //string query = "SELECT Name FROM Lookup WHERE LookupId > 4";
+            //SqlCommand cmd = new SqlCommand(query, con);
+            //SqlDataReader myreader;
+            //try
+            //{
+            //    con.Open();
+            //    myreader = cmd.ExecuteReader();
+            //    //MessageBox.Show("Saved");
+            //    while (myreader.Read())
+            //    {
+            //        comboBox1.Items.Add(myreader[0]);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //con.Close();
+        }
+        
+
     }
 }

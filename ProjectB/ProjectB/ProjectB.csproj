@@ -62,6 +62,12 @@
     <Compile Include="ManageAssessment.Designer.cs">
       <DependentUpon>ManageAssessment.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageClassAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageClassAttendance.Designer.cs">
+      <DependentUpon>ManageClassAttendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageClo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,12 @@
     <Compile Include="Home .Designer.cs">
       <DependentUpon>Home .cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageStudentAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageStudentAttendance.Designer.cs">
+      <DependentUpon>ManageStudentAttendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageStudentResult.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjectBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectBDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectBDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectBDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectBDataSet11.xsd</DependentUpon>
     </Compile>
     <Compile Include="ProjectBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -162,6 +184,9 @@
     <EmbeddedResource Include="ManageAssessment.resx">
       <DependentUpon>ManageAssessment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageClassAttendance.resx">
+      <DependentUpon>ManageClassAttendance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageClo.resx">
       <DependentUpon>ManageClo.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home .resx">
       <DependentUpon>Home .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageStudentAttendance.resx">
+      <DependentUpon>ManageStudentAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageStudentResult.resx">
       <DependentUpon>ManageStudentResult.cs</DependentUpon>
@@ -213,6 +241,28 @@
     </None>
     <None Include="ProjectBDataSet1.xss">
       <DependentUpon>ProjectBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet10.xsc">
+      <DependentUpon>ProjectBDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectBDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectBDataSet10.xss">
+      <DependentUpon>ProjectBDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet11.xsc">
+      <DependentUpon>ProjectBDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectBDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectBDataSet11.xss">
+      <DependentUpon>ProjectBDataSet11.xsd</DependentUpon>
     </None>
     <None Include="ProjectBDataSet2.xsc">
       <DependentUpon>ProjectBDataSet2.xsd</DependentUpon>

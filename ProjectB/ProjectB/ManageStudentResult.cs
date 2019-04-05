@@ -349,6 +349,13 @@ namespace ProjectB
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Home h = new Home();
+            //this.Hide();
+            h.Show();
+        }
+
         /*private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //con.Open();

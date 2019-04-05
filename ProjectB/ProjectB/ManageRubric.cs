@@ -159,7 +159,42 @@ namespace ProjectB
                 if (MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     this.dataGridView1.Rows.RemoveAt(e.RowIndex);
-                    string query = "DELETE FROM RubricLevel WHERE RubricId = @id1";
+                    int[] rubriclvl_array = new int[5];
+                    int i = 0;
+                    string query1 = "Select Id from RubricLevel WHERE CloId = @id1";
+                    SqlCommand cmd1 = new SqlCommand(query1, con);
+                    cmd1.Parameters.Add(new SqlParameter("0", 1));
+                    SqlDataReader reader = cmd1.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        rubriclvl_array[i] = Convert.ToInt32(reader[0]);
+                        i++;
+
+
+
+                    }
+                    foreach(int lvl in rubriclvl_array)
+                    {
+                        string query2 = "Delete from StudentResult WHERE RubricMeasurementId = '" + lvl + "'";
+                        SqlCommand cmd2 = new SqlCommand(query1, con);
+                        cmd2.ExecuteNonQuery();
+
+                        string query3 = "Delete from RubricLevel WHERE RubricId = '" + lvl + "'";
+                        SqlCommand cmd3 = new SqlCommand(query3, con);
+                        cmd3.ExecuteNonQuery();
+
+
+                    }
+                    string query4 = "Delete from Rubric WHERE Id = @id1";
+                    SqlCommand cmd4 = new SqlCommand(query4, con);
+                    cmd4.ExecuteNonQuery();
+
+
+
+
+
+
+                    /*string query = "DELETE FROM RubricLevel WHERE RubricId = @id1";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.Add(new SqlParameter("@id1", id1));
                     cmd.ExecuteReader();
@@ -168,7 +203,7 @@ namespace ProjectB
                     string query1 = "DELETE from Rubric WHERE Id = @id1";
                     SqlCommand cmd1 = new SqlCommand(query1, con);
                     cmd1.Parameters.Add(new SqlParameter("@id1", id1));
-                    cmd1.ExecuteReader();
+                    cmd1.ExecuteReader();*/
                     con.Close();
                 }
             }

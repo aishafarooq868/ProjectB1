@@ -51,3 +51,5 @@ C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.
 C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\bin\Debug\itextsharp.dll
 C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.Report.resources
 C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageStudentResult.resources
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageClassAttendance.resources
+C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageStudentAttendance.resources

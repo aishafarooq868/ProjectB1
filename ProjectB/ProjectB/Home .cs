@@ -73,6 +73,20 @@ namespace ProjectB
             this.Hide();
             m.Show();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ManageStudentAttendance m = new ManageStudentAttendance();
+            m.Show();
+            this.Hide();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            ManageClassAttendance m = new ManageClassAttendance();
+            m.Show();
+            this.Hide();
+        }
     }
 }
 

@@ -82,12 +82,12 @@ namespace ProjectB
                 }
             }
             con.Close();
-            if (cbx_rubricId.Text != "" && txt_details.Text != "" && txt_measurement.Text != "")
+            if (cbx_rubricId.Text != "" && txt_details.Text != "" && comboBox1.Text != "")
             {
                 
                 if(isExist1 == false)
                 {
-                    string query = "INSERT into RubricLevel(RubricId, Details, MeasurementLevel) values ('" + cbx_rubricId.Text + "', '" + txt_details.Text + "', '" + /*Convert.ToInt32(*/txt_measurement.Text + "')";
+                    string query = "INSERT into RubricLevel(RubricId, Details, MeasurementLevel) values ('" + cbx_rubricId.Text + "', '" + txt_details.Text + "', '" + /*Convert.ToInt32(*/comboBox1.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, con);
                     SqlDataReader reader;
                     try
@@ -100,7 +100,7 @@ namespace ProjectB
                         //txt_Id.Text = "";
                         cbx_rubricId.SelectedItem = null;
                         txt_details.Text = "";
-                        txt_measurement.Text = "";
+                        comboBox1.Text = "";
                         string query1 = "SELECT * FROM RubricLevel";
                         SqlCommand cmd1 = new SqlCommand(query1, con);
                         try
@@ -150,12 +150,12 @@ namespace ProjectB
             SqlConnection con = new SqlConnection("Data Source = AISHA; Initial Catalog = ProjectB; Integrated Security = True; MultipleActiveResultSets = True");
             con.Open();
             //Update query
-            string query = "UPDATE RubricLevel SET /*Id = '" + this.textBox1.Text + "',*/ Details = '" + txt_details.Text + "', MeasurementLevel = '" + txt_measurement.Text + "' WHERE Id= '" + id + "'";
+            string query = "UPDATE RubricLevel SET /*Id = '" + this.textBox1.Text + "',*/ Details = '" + txt_details.Text + "', MeasurementLevel = '" + comboBox1.Text + "' WHERE Id= '" + id + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Data is updated");
             //Data inputs are cleared after updation
-            txt_measurement.Text = "";
+            comboBox1.Text = "";
             txt_details.Text = "";
             cbx_rubricId.SelectedItem = null;
             //Showing updated data in datagridview
@@ -175,7 +175,7 @@ namespace ProjectB
             {
                 textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
                 txt_details.Text = dataGridView1.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
-                txt_measurement.Text = dataGridView1.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
+                comboBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
                 //cbx_rubricId.Text = dataGridView1.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
             }
 
@@ -186,6 +186,13 @@ namespace ProjectB
 
                 {
                     this.dataGridView1.Rows.RemoveAt(e.RowIndex);
+                    string query1 = "DELETE FROM StudentResult WHERE RubricMeasurementId = @id1";
+                    SqlCommand cmd1 = new SqlCommand(query1, con);
+                    cmd1.Parameters.Add(new SqlParameter("@id1", id1));
+                    cmd1.ExecuteReader();
+
+
+
                     string query = "DELETE FROM RubricLevel WHERE Id = @id1";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.Add(new SqlParameter("@id1", id1));
@@ -200,6 +207,40 @@ namespace ProjectB
             Home h = new Home();
             this.Hide();
             h.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Home h = new Home();
+            this.Hide();
+            h.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //comboBox1.Items.Add(new ListItem("Text", "Value"))
+            //comboBox1.DisplayMember = "Text";
+            //comboBox1.ValueMember = "Value";
+
+            //comboBox1.Items.Add(new { Text = "report A", Value = "4" });
+            //comboBox1.Items.Add(new { Text = "report B", Value = "3" });
+            //comboBox1.Items.Add(new { Text = "report C", Value = "2" });
+            //comboBox1.Items.Add(new { Text = "report D", Value = "1" });
+            comboBox1.Items.Insert(0, "Copenhagen");
+            comboBox1.Items.Insert(1, "Tokyo");
+            comboBox1.Items.Insert(2, "Japan");
+            comboBox1.Items.Insert(0, "India");
+
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbx_rubricId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

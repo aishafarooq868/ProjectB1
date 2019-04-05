@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txt_measurement = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txt_details = new System.Windows.Forms.TextBox();
             this.cbx_rubricId = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,14 +50,20 @@
             this.btn_update = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_back = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rubricLevelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet7)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_measurement
             // 
-            this.txt_measurement.Location = new System.Drawing.Point(205, 92);
+            this.txt_measurement.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_measurement.Location = new System.Drawing.Point(38, 192);
             this.txt_measurement.Name = "txt_measurement";
             this.txt_measurement.Size = new System.Drawing.Size(153, 20);
             this.txt_measurement.TabIndex = 0;
@@ -65,25 +71,29 @@
             // 
             // txt_details
             // 
-            this.txt_details.Location = new System.Drawing.Point(205, 66);
+            this.txt_details.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_details.Location = new System.Drawing.Point(244, 140);
             this.txt_details.Name = "txt_details";
             this.txt_details.Size = new System.Drawing.Size(153, 20);
             this.txt_details.TabIndex = 1;
             // 
             // cbx_rubricId
             // 
+            this.cbx_rubricId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbx_rubricId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_rubricId.FormattingEnabled = true;
-            this.cbx_rubricId.Location = new System.Drawing.Point(205, 39);
+            this.cbx_rubricId.Location = new System.Drawing.Point(244, 113);
             this.cbx_rubricId.Name = "cbx_rubricId";
             this.cbx_rubricId.Size = new System.Drawing.Size(153, 21);
             this.cbx_rubricId.TabIndex = 2;
+            this.cbx_rubricId.SelectedIndexChanged += new System.EventHandler(this.cbx_rubricId_SelectedIndexChanged);
             this.cbx_rubricId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NMBR_ONLY);
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 42);
+            this.label1.Location = new System.Drawing.Point(108, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 3;
@@ -91,8 +101,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 69);
+            this.label2.Location = new System.Drawing.Point(108, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 4;
@@ -100,8 +111,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 99);
+            this.label3.Location = new System.Drawing.Point(108, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 5;
@@ -109,8 +121,9 @@
             // 
             // btn_add
             // 
+            this.btn_add.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_add.Location = new System.Drawing.Point(406, 42);
+            this.btn_add.Location = new System.Drawing.Point(413, 138);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(95, 23);
             this.btn_add.TabIndex = 6;
@@ -120,8 +133,9 @@
             // 
             // btn_show
             // 
+            this.btn_show.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_show.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_show.Location = new System.Drawing.Point(519, 42);
+            this.btn_show.Location = new System.Drawing.Point(526, 138);
             this.btn_show.Name = "btn_show";
             this.btn_show.Size = new System.Drawing.Size(80, 23);
             this.btn_show.TabIndex = 7;
@@ -131,6 +145,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -142,7 +158,7 @@
             this.Edit,
             this.Delete});
             this.dataGridView1.DataSource = this.rubricLevelBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 171);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 236);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(656, 150);
             this.dataGridView1.TabIndex = 8;
@@ -207,10 +223,11 @@
             // 
             // btn_update
             // 
+            this.btn_update.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_update.Location = new System.Drawing.Point(406, 71);
+            this.btn_update.Location = new System.Drawing.Point(413, 167);
             this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(75, 23);
+            this.btn_update.Size = new System.Drawing.Size(95, 23);
             this.btn_update.TabIndex = 9;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = true;
@@ -218,14 +235,16 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(205, 118);
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.Location = new System.Drawing.Point(244, 192);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(153, 20);
             this.textBox1.TabIndex = 10;
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(519, 71);
+            this.btn_back.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_back.Location = new System.Drawing.Point(526, 167);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(80, 23);
             this.btn_back.TabIndex = 11;
@@ -233,11 +252,70 @@
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.54043F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.45956F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(656, 78);
+            this.tableLayoutPanel1.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(195, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(265, 30);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Manage Class Attendence";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button1.Location = new System.Drawing.Point(13, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "4",
+            "3",
+            "2",
+            "1"});
+            this.comboBox1.Location = new System.Drawing.Point(244, 166);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(153, 21);
+            this.comboBox1.TabIndex = 17;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click);
+            // 
             // RubricLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 333);
+            this.ClientSize = new System.Drawing.Size(680, 398);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_update);
@@ -256,6 +334,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rubricLevelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet7)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +364,9 @@
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
