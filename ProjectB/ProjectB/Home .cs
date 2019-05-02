@@ -87,6 +87,11 @@ namespace ProjectB
             m.Show();
             this.Hide();
         }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

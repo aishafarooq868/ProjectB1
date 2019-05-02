@@ -120,14 +120,6 @@ namespace ProjectB
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            /*foreach (char a in textBox3.Text)
-            {
-                if (char.IsLetter(a) || char.IsPunctuation(a) || char.IsSymbol(a))
-            {
-                MessageBox.Show("Invalid Contact");
-            }
-            }*/
-            //string a = textBox3.Text;
             
         }
 
@@ -172,7 +164,6 @@ namespace ProjectB
                 if (MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     
                 {
-                    //this.dataGridView1.Rows.RemoveAt(e.RowIndex);
 
                     string query1 = "delete from StudentAttendance where StudentId = @id1";
                     SqlCommand cmd1 = new SqlCommand(query1, con);
@@ -280,25 +271,7 @@ namespace ProjectB
 
         private void comboBox1_Click(object sender, EventArgs e)
         {
-            
-            //string query = "SELECT Name FROM Lookup WHERE LookupId > 4";
-            //SqlCommand cmd = new SqlCommand(query, con);
-            //SqlDataReader myreader;
-            //try
-            //{
-            //    con.Open();
-            //    myreader = cmd.ExecuteReader();
-            //    //MessageBox.Show("Saved");
-            //    while (myreader.Read())
-            //    {
-            //        comboBox1.Items.Add(myreader[0]);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-            //con.Close();
+
         }
         
 

@@ -39,9 +39,7 @@ namespace ProjectB
                     con.Open();
                     reader = cmd.ExecuteReader();
                     MessageBox.Show("Data is Saved");
-
-                    //Clears textboxes after adding data.
-                    //txt_Id.Text = "";
+                    
                     txt_title.Text = "";
                     txt_marks.Text = "";
                     txt_weightage.Text = "";
@@ -78,10 +76,7 @@ namespace ProjectB
             {
                 e.Handled = true;
             }
-            //if (txt.Text.Length > 11)
-            //{
-            //    MessageBox.Show("Contact number can be no more longer than 11");
-            //}
+            
         }
 
         private void txt_marks_TextChanged(object sender, EventArgs e)
@@ -94,7 +89,6 @@ namespace ProjectB
             else
             {
                 errorProvider1.SetError(this.txt_marks, "Please, provide marks within range 0 to 100.");
-                //MessageBox.Show("Please, provide marks within range 0 to 100.");
                 txt_marks.Text = "";
                 return;
             }
@@ -128,8 +122,6 @@ namespace ProjectB
                 txt_weightage.Text = dataGridView1.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
             }
             
-            
-            //Data Editing.
             int id1 = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
             if (e.ColumnIndex == 6)
             {
@@ -138,21 +130,10 @@ namespace ProjectB
                 {
                     this.dataGridView1.Rows.RemoveAt(e.RowIndex);
                     con.Open();
-                    /*string query = "DELETE FROM AssessmentComponent WHERE AssessmentId = @id1";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.Add(new SqlParameter("@id1", id1));
-                    cmd.ExecuteReader();
-                    con.Close();
-
-                    con.Open();
-                    string query1 = "DELETE FROM Assessment WHERE Id = @id1";
-                    SqlCommand cmd1 = new SqlCommand(query1, con);
-                    cmd1.Parameters.Add(new SqlParameter("@id1", id1));
-                    cmd1.ExecuteReader();
-                    con.Close();*/
+                    
                     int[] array = new int[50];
                     int i = 0;
-                    string query1 = "Select Id from AssessmentComponent WHERE AssessmentId = @id1";
+                    string query1 = "Select Id from AssessmentComponent WHERE AssessmentId ='" + id1 + "'";
                     SqlCommand cmd1 = new SqlCommand(query1, con);
                     cmd1.Parameters.Add(new SqlParameter("0", 1));
                     SqlDataReader reader = cmd1.ExecuteReader();
@@ -179,12 +160,13 @@ namespace ProjectB
 
                     }
 
-                    string query4 = "Delete  from Assessment WHERE Id = @id1";
+                    string query4 = "Delete  from Assessment WHERE Id ='" + id1 + "'";
                     SqlCommand cmd4 = new SqlCommand(query4, con);
                     cmd4.ExecuteNonQuery();
 
-
+                    con.Close();
                 }
+
             }
         }
 

@@ -53,3 +53,23 @@ C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.
 C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageStudentResult.resources
 C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageClassAttendance.resources
 C:\Users\Engr\Desktop\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageStudentAttendance.resources
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\bin\Debug\ProjectB.exe.config
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.exe
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\bin\Debug\ProjectB.exe
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\bin\Debug\ProjectB.pdb
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\bin\Debug\itextsharp.dll
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.csprojResolveAssemblyReference.cache
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageAssessmentComponent.resources
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageAssessment.resources
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageClassAttendance.resources
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageClo.resources
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageStudent.resources
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.Home.resources
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageStudentAttendance.resources
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageStudentResult.resources
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.ManageRubric.resources
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.Report.resources
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.RubricLevel.resources
+F:\6th Smester\DBMS\Lab Project\New folder\ProjectB1\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.Cache

@@ -194,11 +194,9 @@ namespace ProjectB
             {
                 textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
                 txt_name.Text = dataGridView1.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
-                //cbx_rubricId.Text = dataGridView1.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
                 txt_totalmarks.Text = dataGridView1.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
                 dtp_created.Text = dataGridView1.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
                 dtp_updated.Text = dataGridView1.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
-                //cbx_assessmentId.Text = dataGridView1.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
             }
             con.Open();
             int id1 = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
@@ -208,14 +206,14 @@ namespace ProjectB
 
                 {
                     this.dataGridView1.Rows.RemoveAt(e.RowIndex);
-                    string query1 = "DELETE FROM StudentResult WHERE AssessmentComponentId = @id1";
+                    string query1 = "DELETE FROM StudentResult WHERE AssessmentComponentId = '"+ id1+"'";
                     SqlCommand cmd1 = new SqlCommand(query1, con);
                     cmd1.Parameters.Add(new SqlParameter("@id1", id1));
                     cmd1.ExecuteReader();
                     con.Close();
 
                     con.Open();
-                    string query = "DELETE FROM AssessmentComponent WHERE Id = @id1";
+                    string query = "DELETE FROM AssessmentComponent WHERE Id ='" + id1 + "'";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.Add(new SqlParameter("@id1", id1));
                     cmd.ExecuteReader();

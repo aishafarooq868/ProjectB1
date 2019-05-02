@@ -132,7 +132,7 @@
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 23);
             this.btn_Add.TabIndex = 7;
-            this.btn_Add.Text = "Add To Db";
+            this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = false;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
@@ -222,7 +222,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.54043F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.45956F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this.tableLayoutPanel1.Controls.Add(this.label4, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_back, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
@@ -237,7 +237,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(227, 24);
+            this.label4.Location = new System.Drawing.Point(226, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(294, 30);
             this.label4.TabIndex = 0;
@@ -247,12 +247,13 @@
             // 
             this.btn_back.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_back.Location = new System.Drawing.Point(21, 27);
+            this.btn_back.Location = new System.Drawing.Point(20, 27);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(75, 23);
             this.btn_back.TabIndex = 13;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // ManageStudentAttendance
             // 

@@ -169,10 +169,7 @@ namespace ProjectB
             {
                 att_id = Convert.ToInt32(myreader2[0]);
             }
-            //string query2 = "SELECT Id FROM ClassAttendance WHERE AttendanceDate = '" + cmbAttendanceId.Text + "'";
 
-
-            //int lookid;
             string c = "Select LookupId from Lookup where Name = '" + cbx_Status.Text + "'";
             SqlConnection cn = new SqlConnection(constring);
             SqlCommand cmddatabase3 = new SqlCommand(c, cn);
@@ -222,14 +219,11 @@ namespace ProjectB
             conDataBase1.Open();
             cmdDataBase1.Parameters.Add(new SqlParameter("0", 1));
             myreader1 = cmdDataBase1.ExecuteReader();
-            //MessageBox.Show("Attendance Marked");
             while (myreader1.Read())
             {
                 updated_sid = Convert.ToInt32(myreader1[0]);
             }
 
-
-            //int att_id;
             String date = cbx_Date.Text;
 
             DateTime d1 = Convert.ToDateTime(date);
@@ -425,6 +419,13 @@ namespace ProjectB
         private void cbx_Status_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Home h = new Home();
+            this.Hide();
+            h.Show();
         }
     }
 }

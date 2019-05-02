@@ -212,7 +212,7 @@
             this.cmd_add.Name = "cmd_add";
             this.cmd_add.Size = new System.Drawing.Size(75, 23);
             this.cmd_add.TabIndex = 9;
-            this.cmd_add.Text = "Add To DB";
+            this.cmd_add.Text = "Add";
             this.cmd_add.UseVisualStyleBackColor = false;
             this.cmd_add.Click += new System.EventHandler(this.cmd_add_Click);
             // 
@@ -229,7 +229,7 @@
             this.cmd_show.Name = "cmd_show";
             this.cmd_show.Size = new System.Drawing.Size(75, 23);
             this.cmd_show.TabIndex = 10;
-            this.cmd_show.Text = "Show Data";
+            this.cmd_show.Text = "Show";
             this.cmd_show.UseVisualStyleBackColor = false;
             this.cmd_show.Click += new System.EventHandler(this.cmd_show_Click);
             // 
@@ -273,7 +273,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.54043F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.45956F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_back, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 10);
@@ -288,7 +288,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(193, 24);
+            this.label1.Location = new System.Drawing.Point(192, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(211, 30);
             this.label1.TabIndex = 0;

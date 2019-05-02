@@ -53,21 +53,29 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rubricLevelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet7)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txt_measurement
+            // comboBox1
             // 
-            this.txt_measurement.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_measurement.Location = new System.Drawing.Point(38, 192);
-            this.txt_measurement.Name = "txt_measurement";
-            this.txt_measurement.Size = new System.Drawing.Size(153, 20);
-            this.txt_measurement.TabIndex = 0;
-            this.txt_measurement.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NMBR_ONLY);
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "4",
+            "3",
+            "2",
+            "1"});
+            this.comboBox1.Location = new System.Drawing.Point(244, 166);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(153, 21);
+            this.comboBox1.TabIndex = 17;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click);
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NMBR_ONLY);
             // 
             // txt_details
             // 
@@ -127,7 +135,7 @@
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(95, 23);
             this.btn_add.TabIndex = 6;
-            this.btn_add.Text = "Add To DB";
+            this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -260,7 +268,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.54043F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.45956F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
             this.tableLayoutPanel1.Controls.Add(this.label4, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
@@ -275,11 +283,11 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(195, 24);
+            this.label4.Location = new System.Drawing.Point(218, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(265, 30);
+            this.label4.Size = new System.Drawing.Size(218, 30);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Manage Class Attendence";
+            this.label4.Text = "Manage Rubric Level";
             // 
             // button1
             // 
@@ -292,22 +300,6 @@
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "4",
-            "3",
-            "2",
-            "1"});
-            this.comboBox1.Location = new System.Drawing.Point(244, 166);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(153, 21);
-            this.comboBox1.TabIndex = 17;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click);
             // 
             // RubricLevel
             // 
@@ -327,7 +319,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbx_rubricId);
             this.Controls.Add(this.txt_details);
-            this.Controls.Add(this.txt_measurement);
             this.Name = "RubricLevel";
             this.Text = "RubricLevel";
             this.Load += new System.EventHandler(this.RubricLevel_Load);
